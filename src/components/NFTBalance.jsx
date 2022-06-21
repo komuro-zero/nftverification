@@ -154,15 +154,6 @@ function NFTBalance() {
   return (
     <>
       <div style={styles.NFTs}>
-        {contractABIJson.noContractDeployed && (
-          <>
-            <Alert
-              message="No Smart Contract Details Provided. Please deploy smart contract and provide address + ABI in the MoralisDappProvider.js file"
-              type="error"
-            />
-            <div style={{ marginBottom: "10px" }}></div>
-          </>
-        )}
         {!fetchSuccess && (
           <>
             <Alert
@@ -186,9 +177,6 @@ function NFTBalance() {
                       )
                     }
                   />
-                </Tooltip>,
-                <Tooltip title="List NFT for sale">
-                  <ShoppingCartOutlined onClick={() => handleSellClick(nft)} />
                 </Tooltip>,
               ]}
               style={{ width: 240, border: "2px solid #e7eaf3" }}
